@@ -1,0 +1,30 @@
+# Project: Internet Check
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = internetcheck.o $(RES)
+LINKOBJ  = internetcheck.o $(RES)
+LIBS =  -L"C:/DevC++/App/devcpp/lib" -lbgi -lgdi32 -lcomdlg32 -luuid -loleaut32 -lole32  
+INCS =  -I"C:/DevC++/App/devcpp/include" 
+CXXINCS =  -I"C:/DevC++/App/devcpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/DevC++/App/devcpp/include/c++/3.4.2/backward"  -I"C:/DevC++/App/devcpp/include/c++/3.4.2/mingw32"  -I"C:/DevC++/App/devcpp/include/c++/3.4.2"  -I"C:/DevC++/App/devcpp/include" 
+BIN  = "Internet Check.exe"
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before "Internet Check.exe" all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Internet Check.exe" $(LIBS)
+
+internetcheck.o: internetcheck.cpp
+	$(CPP) -c internetcheck.cpp -o internetcheck.o $(CXXFLAGS)
